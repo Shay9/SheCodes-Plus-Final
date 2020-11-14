@@ -9,6 +9,7 @@
         <script src="https://kit.fontawesome.com/8032d6f7e8.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
@@ -22,15 +23,15 @@
             <input class="btn btn-primary" type="submit" value="Submit">
             </form>
        
-         <h1 class="temperature">
-               Temp°
+         <h1 class="temperature" id="temperature">
+               
          </h1>
          <h2>
             <ul class="basic-elements">
-                <li class="city">
-                     City
+                <li class="city" id="city">
+                     
                 </li>
-                <li>
+                <li class="day-time">
                     <span class="day">  Day </span>
                      <span class="time"> Time </span>
                  </li>
@@ -41,14 +42,14 @@
                 </span>
             <h3>
                  <ul class= "weather-elements">
-                     <li>
+                     <li class= "description" id="description">
                         Description
                      </li>
                      <li>
-                         Humidity: 50%
+                         Humidity: <span id="humidity">  </span>%
                     </li>
                     <li>
-                        Wind: 10 km/h
+                        Wind: <span class="wind" id="wind">  </span>km/h
                     </li>
                  </ul>
             </h3>
