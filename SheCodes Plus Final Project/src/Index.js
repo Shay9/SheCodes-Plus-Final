@@ -36,9 +36,19 @@ function showTemperature (response){
 }
 
 
-let city = "san fransisco";
+function search (city){
 let apiKey = "a35a6fc9aa256480d5ede5662dad54ec";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-
 axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event){
+event.preventDefault();
+let searchElement = document.querySelector("#search");
+search(searchElement.value);
+}
+
+search("Toronto");
+
+let form = document.querySelector("#searchbar");
+form.addEventListener("submit", handleSubmit);
