@@ -24,6 +24,8 @@ function showTemperature (response){
     let datetimeElement = document.querySelector("#datetime");
     let iconElement = document.querySelector("#icon");
 
+    celciusTemperature = response.data.main.temp;
+
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name
     descriptionElement.innerHTML = response.data.weather[0].description
@@ -48,7 +50,29 @@ let searchElement = document.querySelector("#search");
 search(searchElement.value);
 }
 
-search("Toronto");
+function showFarenheitTemp (event){
+event.preventDefault();
+let TemperatureElement = document.querySelector("#temperature");
+let farenheitTemperature = (celciusTemperature * 9) / 5 + 32; 
+TemperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+function showCelciusTemp (event){
+    event.preventDefault();
+    let TemperatureElement = document.querySelector("#temperature");
+    TemperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
 
 let form = document.querySelector("#searchbar");
 form.addEventListener("submit", handleSubmit);
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showFarenheitTemp);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCelciusTemp);
+
+search("Toronto");
