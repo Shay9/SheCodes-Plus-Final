@@ -39,12 +39,39 @@ body {
   color: white;
   padding-top: 20px;
   position: relative;
-  left: 50px;
+  left: 55px;
+  font-size: 70px;
+  font-weight: 50px;
+}
+
+.degree-sign {
+  color: white;
+  position: relative;
+  bottom: 83px;
+  left: 130px;
+}
+
+.city {
+  position: relative;
+
+  bottom: 30px;
+}
+
+.icon {
+  position: relative;
+  bottom: 170px;
+  left: 170px;
+  padding: 10px;
 }
 
 .time {
   position: relative;
   left: 20px;
+}
+
+.day-time {
+  position: relative;
+  bottom: 20px;
 }
 
 .description {
@@ -56,7 +83,7 @@ body {
   list-style: none;
   position: relative;
   left: 350px;
-  bottom: 210px;
+  bottom: 270px;
   color: white;
   font-weight: lighter;
   line-height: 40px;
@@ -73,16 +100,6 @@ body {
   line-height: 40px;
 }
 
-.weather-icon {
-  color: #ffe05d;
-  position: relative;
-  left: 140px;
-  bottom: 110px;
-}
-.city {
-  position: relative;
-  left: 20px;
-}
 .current-location-btn {
   position: relative;
   left: 235px;
