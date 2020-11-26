@@ -38,6 +38,7 @@ body {
 .temperature {
   color: white;
   padding-top: 20px;
+  padding-bottom: 20px;
   position: relative;
   left: 40px;
   font-size: 70px;
@@ -108,13 +109,13 @@ body {
 
 .current-location-btn {
   position: relative;
-  left: 270px;
+  left: 480px;
   top: -220px;
 }
 
 .footer {
   position: relative;
-  top: -46px;
-  left: 232px;
+  top: -115px;
+  left: 400px;
   color: #373a40;
 }
