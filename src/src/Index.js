@@ -40,7 +40,7 @@ function showTemperature (response){
     windElement.innerHTML = Math.round(response.data.wind.speed);
     datetimeElement.innerHTML = date(response.data.dt * 1000);
      iconElement.setAttribute("src", 
-     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
      iconElement.setAttribute("alt", response.data.weather[0].description)
 }
 
@@ -55,7 +55,7 @@ function showForecast(response){
             ${formatHours(forecast.dt * 1000)}
         </h3>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
          />
         <div class="weather-forecast-temperature">
             <strong>
@@ -73,7 +73,7 @@ function showForecast(response){
             ${formatHours(forecast.dt * 1000)}
         </h3>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
          />
         <div class="weather-forecast-temperature">
             <strong>
@@ -91,7 +91,7 @@ function showForecast(response){
             ${formatHours(forecast.dt * 1000)}
         </h3>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
          />
         <div class="weather-forecast-temperature">
             <strong>
@@ -109,7 +109,7 @@ forecast = response.data.list[3];
             ${formatHours(forecast.dt * 1000)}
         </h3>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
          />
         <div class="weather-forecast-temperature">
             <strong>
@@ -127,7 +127,7 @@ forecast = response.data.list[3];
             ${formatHours(forecast.dt * 1000)}
         </h3>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
          />
         <div class="weather-forecast-temperature">
             <strong>
@@ -145,7 +145,7 @@ forecast = response.data.list[3];
             ${formatHours(forecast.dt * 1000)}
         </h3>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
          />
         <div class="weather-forecast-temperature">
             <strong>
@@ -161,7 +161,7 @@ let apiKey = "a35a6fc9aa256480d5ede5662dad54ec";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
 
-apiUrl =`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+apiUrl =`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showForecast);
 }
 
@@ -194,14 +194,14 @@ function currentLocation(event) {
   navigator.geolocation.getCurrentPosition(SearchLocation);
 }
 
+
 function SearchLocation(position) {
   let apiKey = "a35a6fc9aa256480d5ede5662dad54ec";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayCityResults);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
-
-
-
 
 
 
